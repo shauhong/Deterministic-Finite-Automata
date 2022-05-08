@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { GlobalProvider } from './contexts/GlobalContext';
+import { Toast } from './components'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <App />
+    <GlobalProvider>
+      <BrowserRouter>
+        <App />
+        <Toast />
+      </BrowserRouter>
+    </GlobalProvider>
+
   </React.StrictMode>
 );
 
